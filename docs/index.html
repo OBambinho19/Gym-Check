@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#111111" />
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="icon" href="./icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+  <title>Gym Tracker</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__title">Gym Tracker</div>
+    <button id="installBtn" class="btn btn--ghost" hidden>Instalar</button>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="row">
+        <div class="field">
+          <label>Fecha</label>
+          <input id="date" type="date" />
+        </div>
+        <div class="field">
+          <label>Grupo</label>
+          <select id="group"></select>
+        </div>
+        <button id="newBtn" class="btn">Nuevo entreno</button>
+      </div>
+      <p class="muted">Marca los ejercicios que haces y añade series (reps + kg). Se guarda en tu móvil.</p>
+    </section>
+
+    <section id="draft" class="stack"></section>
+
+    <section class="card">
+      <div class="row row--space">
+        <h2 class="h2">Historial</h2>
+        <button id="exportBtn" class="btn btn--ghost">Exportar</button>
+      </div>
+      <div id="history" class="stack"></div>
+      <p class="muted small">Tip: si cambias de iPhone o borras datos del navegador, se pierde. Exporta para backup.</p>
+    </section>
+
+    <footer class="footer muted small">
+      Offline listo · Sin cuenta · Datos en local
+    </footer>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
