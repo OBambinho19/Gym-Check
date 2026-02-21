@@ -20,12 +20,23 @@ body{
 .topbar{
   position:sticky; top:0; z-index:10;
   display:flex; align-items:center; justify-content:space-between;
-  padding:14px 16px;
+  padding:12px 12px;
   backdrop-filter: blur(10px);
   background: rgba(11,11,12,.75);
   border-bottom:1px solid var(--line);
+  gap:10px;
 }
-.topbar__title{font-weight:800; letter-spacing:.2px}
+.topbar__title{font-weight:800; letter-spacing:.2px; white-space:nowrap}
+.tabs{display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end}
+.tab{
+  padding:10px 12px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.04);
+  color: var(--text);
+  font-weight:700;
+}
+.tab.active{background: rgba(255,255,255,.12)}
 .container{max-width:920px; margin:0 auto; padding:14px 12px 40px}
 .card{
   border:1px solid var(--line);
@@ -36,13 +47,13 @@ body{
 .stack{display:grid; gap:10px; margin-top:12px}
 .row{display:flex; gap:10px; flex-wrap:wrap; align-items:end}
 .row--space{justify-content:space-between; align-items:center}
-.field{min-width:140px; flex: 1}
-label{display:block; font-size:12px; color:var(--muted); margin:0 0 6px}
+.field{min-width:160px; flex: 1}
+label{display:block; font-size:12px; color:rgba(243,243,244,.7); margin:0 0 6px}
 input,select{
   width:100%;
   padding:12px 12px;
   border-radius:14px;
-  border:1px solid var(--line);
+  border:1px solid rgba(255,255,255,.10);
   background: rgba(255,255,255,.06);
   color:var(--text);
   outline:none;
@@ -54,35 +65,42 @@ input[type="date"]{min-height:46px}
   border:1px solid rgba(255,255,255,.12);
   background: var(--btn);
   color: var(--btnText);
-  font-weight:700;
+  font-weight:800;
 }
+.btn[disabled]{opacity:.5}
 .btn--ghost{
   background: transparent;
   color: var(--text);
 }
 .btn:active{transform: translateY(1px)}
-.muted{color:var(--muted); margin:10px 0 0}
+.muted{color:rgba(243,243,244,.7); margin:10px 0 0}
 .small{font-size:12px}
-
 .session{
-  border:1px solid var(--line);
+  border:1px solid rgba(255,255,255,.10);
   border-radius:18px;
   padding:12px;
   background: rgba(255,255,255,.04);
 }
-.session__title{display:flex; justify-content:space-between; gap:10px; align-items:center}
+.session__title{display:flex; justify-content:space-between; gap:10px; align-items:center; flex-wrap:wrap}
 .session__title strong{font-size:16px}
 .pill{
   font-size:12px;
   padding:6px 10px;
   border-radius:999px;
-  border:1px solid var(--line);
-  color:var(--muted);
+  border:1px solid rgba(255,255,255,.10);
+  color:rgba(243,243,244,.7);
 }
-
+.block{
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:18px;
+  padding:12px;
+  background: rgba(0,0,0,.10);
+}
+.block__head{display:flex; gap:10px; align-items:end; justify-content:space-between; flex-wrap:wrap}
+.block__head .field{min-width:200px}
 .exercise{
   margin-top:10px;
-  border:1px solid var(--line);
+  border:1px solid rgba(255,255,255,.10);
   border-radius:16px;
   padding:12px;
   background: rgba(0,0,0,.15);
@@ -90,16 +108,14 @@ input[type="date"]{min-height:46px}
 .exercise__head{
   display:flex; gap:10px; align-items:center; justify-content:space-between; flex-wrap:wrap;
 }
-.exercise__name{display:flex; gap:10px; align-items:center; font-weight:750}
-.exercise__last{font-size:12px; color:var(--muted)}
-.checkbox{
-  width:22px; height:22px;
-}
+.exercise__name{display:flex; gap:10px; align-items:center; font-weight:800}
+.exercise__last{font-size:12px; color:rgba(243,243,244,.7)}
+.checkbox{width:22px; height:22px}
 .sets{margin-top:10px; display:grid; gap:8px}
 .setrow{
   display:flex; gap:10px; align-items:center; flex-wrap:wrap;
 }
-.setrow span{width:62px; color:var(--muted); font-size:12px}
+.setrow span{width:62px; color:rgba(243,243,244,.7); font-size:12px}
 .setrow input{max-width:140px}
 .btn-danger{
   background: transparent;
@@ -108,4 +124,12 @@ input[type="date"]{min-height:46px}
 }
 .h2{margin:0; font-size:18px}
 .footer{margin-top:16px; text-align:center}
-a{color:inherit}
+.tpl-item{
+  display:flex; gap:8px; align-items:center; flex-wrap:wrap;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:16px;
+  padding:12px;
+  background: rgba(255,255,255,.04);
+}
+.tpl-item input{max-width:420px}
+.tpl-item .btn{padding:10px 12px}
